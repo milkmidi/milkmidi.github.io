@@ -1,0 +1,270 @@
+body{
+	background: #f6f6f6;
+	width: 100%;
+	height: 100%;
+    overflow-x:hidden;
+}
+#wrap{
+	position:relative;
+	width: 600px;
+	height: 100%;
+	margin: 0 auto;
+	/*left: 50%;
+	top:50%;
+	margin: -170px 0 0 -300px;	*/
+}
+a {
+    text-decoration:none;
+}
+
+
+#category_wrap{	
+}
+    .category_end {
+        width:250px;
+        height:50px;
+    }
+    .box_wrap {
+        margin-top:40px;
+	    position:relative;
+	    left:150px;
+	    width:393px;
+	    height:300px;           
+	    background:url(../images/category_shadow.png) no-repeat;
+    }
+	.category_android{	
+		background-color:#a5b54f;              
+	}
+    .category_html5 {
+        background-color:#514fb5;
+    }
+    .category_books {
+        background-color:#b5954f;
+    }
+	.category_box{	
+        cursor:pointer;	
+		display:block;
+		width:300px;
+		height:180px;
+        -webkit-animation-name: fadeOutLeft;
+	    -moz-animation-name: fadeOutLeft;
+	    -o-animation-name: fadeOutLeft;
+	    animation-name: fadeOutLeft;
+        margin:20px 0;       
+      
+	}
+        .category_box:hover {
+            background-color:#a0a0a0;      
+            -webkit-animation-name: fadeInLeft;
+	        -moz-animation-name: fadeInLeft;
+	        -o-animation-name: fadeInLeft;
+	        animation-name: fadeInLeft;            
+        }
+	.category_box p{
+		font-family: 'Roboto', sans-serif;		
+		text-align:center;
+		width:100%;
+		line-height:180px;
+		font-size:50px;
+		color:white;
+	}
+    .category_item {
+        margin:40px 0;
+	    position:relative;
+	    left:175px;
+	    width:389px;
+	    /*height:339px;*/    
+        min-height:400px;
+        height:auto;        	
+       
+    }
+    .category_item_bg_shadow {
+        background:url(../images/image_shadow.png) no-repeat left 40px;
+    }
+        .category_item_inner {        
+            color:#a0a0a0;
+            font-family: 'Roboto Condensed', "微軟正黑體",sans-serif;		
+            width:250px;
+            height:250px;
+            -webkit-animation-name: fadeOutLeft;
+	        -moz-animation-name: fadeOutLeft;
+	        -o-animation-name: fadeOutLeft;
+	        animation-name: fadeOutLeft;    
+        }
+            .category_item_inner p {
+                padding-left:10px;
+            }
+            .category_item_inner_title {
+                /*margin-top:10px;*/
+                font-size:36px;
+                line-height:40px;
+            }
+            .category_item_inner_description {
+                font-family:'微軟正黑體', sans-serif;		
+                font-size:14px;
+                width:230px;
+                line-height:16px;
+            }
+    
+
+/*.title_android { background-image: url("../images/title_sprite.png"); background-position: 0 0; width: 98px; height: 24px; background-repeat: no-repeat; }
+.title_books { background-image: url("../images/title_sprite.png"); background-position: -98px 0; width: 77px; height: 24px; background-repeat: no-repeat; }
+.title_undefined { background-image: url("../images/title_sprite.png"); background-position: -175px 0; width: 125px; height: 25px; background-repeat: no-repeat; }
+.title_web { background-image: url("../images/title_sprite.png"); background-position: 0 -24px; width: 58px; height: 24px; background-repeat: no-repeat; }
+    */
+	#wrap img{
+		/*display: block;
+		width: 260px;
+		height: 260px;
+		float: left;*/
+	}
+	#ie_go_to_hell{
+		display: none;
+		width: 600px;
+		height: 300px;
+		background: url("../images/ieCrash.png") center center no-repeat;
+	}
+	#inner{
+		position: relative;
+		/*float: left;
+		width: 250px;
+		height: 100%;
+		padding-left:20px;
+		padding-top: 50px;*/
+	}
+	#canvas{
+		/*width: 500px;
+		height: 360px;*/
+	}
+
+
+.kv_btn{
+	display: block;
+	margin: 20px auto;
+}
+#blog_btn{
+	width: 104px;
+	height: 59px;	
+	background: url("../images/blog.png") no-repeat;
+}
+#blog_btn:hover{
+	background-position: bottom;
+}
+
+#facebook_btn{
+	width: 247px;
+	height: 47px;	
+	background: url("../images/facebook.png") no-repeat;
+}
+#facebook_btn:hover{
+	background-position: bottom;
+}
+
+/* Animate */
+.animated{
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-duration:350ms;
+    -moz-animation-duration:350ms;
+    -ms-animation-duration:350ms;
+    -o-animation-duration:350ms;
+    animation-duration:350ms;
+
+}
+/*.animated.hinge{
+    -webkit-animation-duration:350ms;
+    -moz-animation-duration:350ms;
+    -ms-animation-duration:350ms;
+    -o-animation-duration:350ms;
+    animation-duration:350ms;}*/
+
+@-webkit-keyframes fadeInLeft {
+	0% {		        
+		-webkit-transform: translate(0,0) ;
+	} 100% {		
+		-webkit-transform: translate(-5px,-5px);
+	}
+}
+@-webkit-keyframes fadeOutLeft {
+	0% {		
+		-webkit-transform: translate(-5px,-5px);
+	} 100% {		
+		-webkit-transform: translate(0,0);
+	}
+}
+@-moz-keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-moz-transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-moz-transform: translateX(0);
+	}
+}
+@-o-keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-o-transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-o-transform: translateX(0);
+	}
+}
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	-moz-animation-name: fadeInLeft;
+	-o-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+}
+/* Animate */
+
+@media (max-width: 767px) {
+	#wrap{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		top: 0px;
+		left: 0px;
+		margin: 0;
+	}
+	#ie_go_to_hell{		
+		width: 100%;		
+	}
+	#canvas_wrap{
+		/*float:none;
+		width: 320px;
+		margin: 0 auto;*/
+	}
+	#inner{
+		/*position: relative;
+		margin: 0 auto;
+		padding:0;
+		float: none;*/
+	}
+	#canvas{
+		/*width: 320px;
+		height: 360px;*/
+	}
+	.kv_btn{	
+		/*margin-top: 0px;
+		margin-bottom: 10px;*/
+	}
+}
