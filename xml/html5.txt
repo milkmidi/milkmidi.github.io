@@ -3,7 +3,7 @@
 		"title"	:"Sheep Farm",
 		"date"	:"2012 08",
 		"imgURL":"images/html5_sheepfarm.png",
-		"url":"http://milkmidi.com/sheepfarm/",
+		"url":"demo/sheepfarm/index.html",
 		"shadow":"1",
 		"description":"邪惡的大野狼衝進羊咩咩農場,快來拯救可愛的羊群們!"
 	}
@@ -12,7 +12,7 @@
 		"title"	:"CreateJS",
 		"date"	:"2012 08",
 		"imgURL":"images/html5_createjs.png",
-		"url":"http://milkmidi.com/createjs/",
+		"url":"demo/createjs/index.html",
 		"shadow":"1",
 		"description":"CreateJS"
 	}
