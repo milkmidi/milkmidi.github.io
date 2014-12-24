@@ -1,0 +1,21 @@
+﻿[
+	{
+		"title"	:"Flash3D特效宅急便",
+		"date"	:"2010 08",
+		"imgURL":"images/books_pv3d.jpg",
+		"url":"http://www.books.com.tw/products/0010440020",
+		"shadow":"1",
+		"description":"Flash3D特效宅急便"
+	}
+	,
+	{
+		"title"	:"設計職人必修",
+		"date"	:"2013 08",
+		"imgURL":"images/books_air.jpg",
+		"url":"http://www.books.com.tw/exep/prod/lookinside.php?item=0010579967",
+		"shadow":"1",
+		"description":"設計職人必修,iPhone,Android用 Flash 輕鬆打造"
+	}
+	
+	
+]
