@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml update="18/06/2007">
+
+   <item label="[ 01.ABOUT ME ]" over="[ 關於我 ]" swf="FLASH/00.about.swf"  navigateURL="/About/" />
+   <item label="[ 02.PORTFOLIO ]" over="[ 作品集 ]" swf="FLASH/01.portfolio.swf" navigateURL="/Portfolio/" />
+   <item label="[ 03.GALLERY ]" over="[ 相本集 ]" swf="FLASH/02.gallery.swf" navigateURL="/Gallery/" />
+   <item label="[ 04.FAVORITE ]" over="[ 我的最愛 ]" swf="FLASH/03.favorite.swf" navigateURL="/Favorite/" />
+   <item label="[ 05.BLOG ]"  over="[ 布落格 ]"  swf="http://blog.yam.com/milkmidi"  navigateURL="/Blog/"/>
+   <item label="[ 06.GUESTBOOK ]" over="[ 留言版 ]" swf="http://milkmidi.gbook.aspsmart.idv.tw/" navigateURL="/GuestBook/"/>
+   <item label="[ 07.CONTACT ]" over="[ 聯絡我 ]" swf="mailto:milkmidi@gmail.com" navigateURL="/Contact/" />
+
+
+</xml>

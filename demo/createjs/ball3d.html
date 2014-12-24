@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta charset="utf-8" /> 
+	<meta name="author" content="milkmidi" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="copyright" content="milkmidi" />
+	<title>milkmidi :: Html5 3DBall</title> 
+	<style>
+		#stageCanvas{
+			background-color:#333333;
+		}
+		#slider{
+			width:400px;		
+			margin: 10px;			
+		}
+	</style> 
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script src="lib/easel.js"></script> 
+   	<script src="js/Ball3D.js"></script> 
+	<script> 
+		//檢查Canvas在當前瀏覽器是否支持
+		//http://diveintohtml5.org/detect.html#canvas
+		if(!(!!document.createElement("canvas").getContext)){
+			var wrapper = document.getElementById("canvasWrapper");
+			wrapper.innerHTML = "Your browser does not appear to support " +
+			"the HTML5 Canvas element";
+		}		 
+		var stage; 
+		var ballArr;/*Ball3D*/
+		var focalLength/*int*/	 = 150;
+		var centerX/*int*/;
+		var centerY/*int*/;
+		var count /*int*/= 0;
+		var angleY = 0/*Number*/;
+		var debug_text/*Text*/;
+		var mouseX/*int*/ = 0;	
+
+		function init()	{ 			
+			var canvas = document.getElementById("stageCanvas"); 
+			//alert(canvas);
+			canvas.addEventListener('mousemove', mousemoveHandler, false);
+			centerX = canvas.width * 0.5;
+			centerY = canvas.height * 0.5; 
+			mouseX = centerX;
+			stage = new Stage(canvas);
+			
+			ballArr = [];
+
+			for(var i = 0 ; i<80 ; i++){
+				var _ball = new Ball3D();
+				_ball.xpos = 0.75 * Math.random() * focalLength * 2 - focalLength;
+				_ball.ypos = 0.75 * Math.random() * focalLength * 2 - focalLength;
+				_ball.zpos = 0.75 * Math.random() * focalLength * 2 - focalLength;	
+				_ball.x = 0;
+				_ball.y = 0;
+				_ball.centerX = centerX;
+				_ball.centerY = centerY;
+				_ball.setText(i);
+				_ball.setStageSize(800,600);
+				ballArr.push(_ball);
+				stage.addChild(_ball);
+			} 
+			
+			debug_text = new Text("D","Arial","#ffffff");
+			debug_text.zpos = 999;
+			debug_text.x  = 2;
+			debug_text.y =12;
+			stage.addChild(debug_text);
+
+
+			
+			stage.update();			
+			Ticker.addListener(this);			
+		}
+		function mousemoveHandler(e){			
+			mouseX = e.layerX;
+			//debug_text.text = e.layerX + ":" +e.layerY;
+		}
+		function tick()	{
+			debug_text.text = Math.round(Ticker.getMeasuredFPS())+" fps";
+			angleY = (centerX - mouseX) * 0.00008;
+			for(var ball in ballArr/*Ball3D*/) {
+				var o/*Ball3D*/ = ballArr[ball];
+				o.onTick(angleY,focalLength);				
+			}			
+			stage.sortChildren(sortZ);
+			stage.tick();
+		}
+		function sortZ(a,b) {
+			return (a.zpos - b.zpos) * -1;
+		}
+		
+		$(function() {			
+			$( "#slider" ).slider({
+				min	 :10,
+				max	 :350,
+				value:150,
+				slide: function(event, ui) {
+					focalLength = ui.value;
+					$("#info").html(ui.value);
+				}
+			});
+			
+		});
+	</script>
+ 
+</head>
+<body onload="init()">
+	<div width="960" height="700" id="canvasWrapper">
+		<canvas width="960" height="700" id="stageCanvas"></canvas>
+	</div>  
+	<div id="slider"></div>	
+	<div id="info">50</div>
+	
+</body>
+</html>
